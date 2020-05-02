@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 8083
 
 eureka:
   instance:
@@ -13,7 +13,7 @@ eureka:
 
 spring:
   application:
-    name: course
+    name: auth
   jpa:
     show-sql: false
     hibernate:
@@ -28,6 +28,7 @@ spring:
     url: jdbc:mysql://localhost:3306/devdojo?allowPublicKeyRetrieval=true&sslMode=DISABLED
     username: root
     password: devdojo
+
 
 
 
