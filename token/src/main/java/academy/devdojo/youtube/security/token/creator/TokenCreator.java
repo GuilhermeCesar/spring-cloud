@@ -45,8 +45,8 @@ public class TokenCreator {
                 .keyID(UUID.randomUUID().toString())
                 .build();
 
-        SignedJWT signedJWT = new SignedJWT(new JWSHeader.Builder(JWSAlgorithm.RS256).
-                jwk(jwk)
+        SignedJWT signedJWT = new SignedJWT(new JWSHeader.Builder(JWSAlgorithm.RS256)
+                .jwk(jwk)
                 .type(JOSEObjectType.JWT)
                 .build(), jwtClainSet);
 
@@ -70,6 +70,7 @@ public class TokenCreator {
                         .map(GrantedAuthority::getAuthority)
                         .collect(toList())
                 )
+                .claim("userId", applicationUser.getId())
                 .issuer("http://academy.devdojo")
                 .issueTime(new Date())
                 .expirationTime(new Date(System.currentTimeMillis() + (jwtConfiguration.getExpiration() * 1000)))
