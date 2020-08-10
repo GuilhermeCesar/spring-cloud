@@ -7,10 +7,8 @@ import com.nimbusds.jwt.SignedJWT;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
